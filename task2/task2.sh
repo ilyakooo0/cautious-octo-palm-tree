@@ -39,7 +39,7 @@ if [ -z "$index" ]; then
   exit 1
 fi
 
-number_of_lines=$(wc -l <"$input")
+number_of_lines=$(tail -n +2 "$input" | wc -l)
 train_lines=$(echo "$number_of_lines * $train_ratio / 100" | bc)
 test_lines=$(echo "$number_of_lines - $train_lines" | bc)
 
