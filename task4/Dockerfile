@@ -14,6 +14,8 @@ RUN pip install flask
 
 RUN apt-get clean
 
+RUN useradd techproguser
+
 EXPOSE 5000
 
 ENTRYPOINT FLASK_APP=/src/app.py flask run --port=5000 --host=0.0.0.0
